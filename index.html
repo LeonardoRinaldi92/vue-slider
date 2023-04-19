@@ -14,7 +14,7 @@
             <section class="position">
                 <div class="containergrande">
                     <div id="up">
-                        <span>
+                        <span  @click="indietro">
                             <i class="fa-solid fa-angle-up"></i>
                         </span>
                     </div>
@@ -27,17 +27,16 @@
                             <span>
                                 {{imagesArray[currentImage].text}}
                             </span>
-
                         </div>                
                     </div>
                     <div id="down">
-                        <span>
+                        <span @click="avanti">
                             <i class="fa-solid fa-angle-down"></i>
                         </span>
                     </div>
                 </div> 
                 <div  class="containerTunb">
-                    <img v-for="(element,index) in imagesArray" key:index v-bind:src="element.image" alt="" v-bind:class=" (currentImage !== index) ? 'bright' : '' ">
+                    <img v-for="(element,index) in imagesArray" key:index v-bind:src="element.image" alt="" v-bind:class=" (currentImage !== index) ? 'bright' : '' " @click="scegliImg(index)">
                 </div>  
             </section>
         </main>
