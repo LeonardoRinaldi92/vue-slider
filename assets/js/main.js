@@ -3,6 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
         return {
+            autoSlide : null,
             currentImage: 0,
             imagesArray: [
                 {
@@ -29,7 +30,33 @@ const { createApp } = Vue
             ]
 
       }
-    },methods: {
-        
+    },
+    created() {
+        this.goSlide()
+    },
+    methods: {
+        avanti(){
+            if (this.currentImage == this.imagesArray.length - 1) {
+                this.currentImage = 0
+            } else {
+                this.currentImage ++
+            }
+        },
+
+        indietro(){
+            if (this.currentImage == 0) {
+                this.currentImage = this.imagesArray.length - 1
+            } else {
+                this.currentImage --
+            }
+        },
+
+        scegliImg(index){
+            this.currentImage = index
+        },
+
+        goSlide(){
+            this.autoSlide = setInterval(this.avanti, 1000);
+        }
     },
   }).mount('#app')
