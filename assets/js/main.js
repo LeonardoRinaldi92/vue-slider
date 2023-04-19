@@ -3,7 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
         return {
-            path : "",
+            currentImage: 0,
             imagesArray: [
                 {
                     image: "./assets/img/01.webp",
