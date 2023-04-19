@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+<body> <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <main>
+            <section class="position">
+                <div class="containergrande">
+                    <div id="up">
+                        <span>
+                            <i class="fa-solid fa-angle-up"></i>
+                        </span>
+                    </div>
+                    <div class="container">                
+                    </div>
+                    <div id="down">
+                        <span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </span>
+                    </div>
+                </div> 
+                <div  class="containerTunb">
+                    <img v-for="(element,index) in imagesArray" key:index v-bind:src="element.image" alt="">
+                    
+                </div>  
+            </section>
+        </main>
+        
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
