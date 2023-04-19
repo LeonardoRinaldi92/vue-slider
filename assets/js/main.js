@@ -57,6 +57,11 @@ const { createApp } = Vue
 
         goSlide(){
             this.autoSlide = setInterval(this.avanti, 1000);
-        }
+        },
+
+        stopSlide(){
+            clearInterval(this.autoSlide),
+            this.autoSlide = null
+        },
     },
   }).mount('#app')
